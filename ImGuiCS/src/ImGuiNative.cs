@@ -768,7 +768,7 @@ namespace ImGuiNET
 
         // public state access - if you want to share ImGui state between modules (e.g. DLL) or allocate it yourself
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
-        public static extern char* igGetVersion();
+        public static extern IntPtr igGetVersion();
         /*
         CIMGUI_API struct ImGuiContext*    igCreateContext(void* (*malloc_fn)(size_t), void (*free_fn)(void*));
         CIMGUI_API void                    igDestroyContext(struct ImGuiContext* ctx);

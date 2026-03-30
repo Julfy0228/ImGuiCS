@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Text;
 
 namespace ImGuiNET {
     public static class ImGui {
@@ -343,6 +344,22 @@ namespace ImGuiNET {
                     cmd->ClipRect = new ImVec4(cmd->ClipRect.X * scale.X, cmd->ClipRect.Y * scale.Y, cmd->ClipRect.Z * scale.X, cmd->ClipRect.W * scale.Y);
                 }
             }
+        }
+
+        public static string GetVersion()
+        {
+            IntPtr ptr = ImGuiNative.igGetVersion();
+            if (ptr == IntPtr.Zero)
+                return null;
+
+            int length = 0;
+            while (Marshal.ReadByte(ptr, length) != 0)
+                length++;
+
+            byte[] buffer = new byte[length];
+            Marshal.Copy(ptr, buffer, 0, length);
+
+            return Encoding.UTF8.GetString(buffer);
         }
 
         public static float GetWindowHeight()
