@@ -16,6 +16,7 @@ namespace ImGuiNET {
         /// TTF data ownership taken by the container ImFontAtlas (will delete memory itself).
         /// Set to true.
         /// </summary>
+        [MarshalAs(UnmanagedType.I1)]
         public bool FontDataOwnedByAtlas;
         /// <summary>
         /// 0.
@@ -40,6 +41,7 @@ namespace ImGuiNET {
         /// Align every character to pixel boundary (if enabled, set OversampleH/V to 1).
         /// Set to false.
         /// </summary>
+        [MarshalAs(UnmanagedType.I1)]
         public bool PixelSnapH;
         /// <summary>
         /// Extra spacing (in pixels) between glyphs.
@@ -59,6 +61,7 @@ namespace ImGuiNET {
         /// Merge into previous ImFont, so you can combine multiple inputs font into one ImFont (e.g. ASCII font + icons + Japanese glyphs).
         /// Set to false.
         /// </summary>
+        [MarshalAs(UnmanagedType.I1)]
         public bool MergeMode;
 
         // [Internal]
