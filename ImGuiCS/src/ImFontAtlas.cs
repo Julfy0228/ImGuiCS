@@ -9,6 +9,24 @@ namespace ImGuiNET {
             Native = native;
         }
 
+        public IntPtr GlyphRangesChinese =>
+        (IntPtr)ImGuiNative.ImFontAtlas_GetGlyphRangesChinese(Native);
+
+        public IntPtr GlyphRangesCyrillic =>
+            (IntPtr)ImGuiNative.ImFontAtlas_GetGlyphRangesCyrillic(Native);
+
+        public IntPtr GlyphRangesDefault =>
+            (IntPtr)ImGuiNative.ImFontAtlas_GetGlyphRangesDefault(Native);
+
+        public IntPtr GlyphRangesJapanese =>
+            (IntPtr)ImGuiNative.ImFontAtlas_GetGlyphRangesJapanese(Native);
+
+        public IntPtr GlyphRangesKorean =>
+            (IntPtr)ImGuiNative.ImFontAtlas_GetGlyphRangesKorean(Native);
+
+        public IntPtr GlyphRangesThai =>
+            (IntPtr)ImGuiNative.ImFontAtlas_GetGlyphRangesThai(Native);
+
         public ImFontTextureData GetTexDataAsAlpha8() {
             byte* pixels;
             int width, height;

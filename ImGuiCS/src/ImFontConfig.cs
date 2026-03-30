@@ -54,7 +54,7 @@ namespace ImGuiNET {
         /// <summary>
         /// List of Unicode range (2 value per range, values are inclusive, zero-terminated list).
         /// </summary>
-        public char* GlyphRanges;
+        public ushort* GlyphRanges;
         /// <summary>
         /// Merge into previous ImFont, so you can combine multiple inputs font into one ImFont (e.g. ASCII font + icons + Japanese glyphs).
         /// Set to false.
