@@ -679,8 +679,7 @@ namespace ImGuiNET
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
         public static extern int igGetFrameCount();
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
-        [return: MarshalAs(UnmanagedType.LPUTF8Str)]
-        public static extern string igGetStyleColName(ImGuiCol idx);
+        public static extern IntPtr igGetStyleColName(ImGuiCol idx);
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
         public static extern void igCalcItemRectClosestPoint(out ImVec2 pOut, ImVec2 pos, bool on_edge, float outward);
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
@@ -761,8 +760,7 @@ namespace ImGuiNET
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
         public static extern void igMemFree(void* ptr);
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
-        [return: MarshalAs(UnmanagedType.LPUTF8Str)]
-        public static extern string igGetClipboardText();
+        public static extern IntPtr igGetClipboardText();
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
         public static extern void igSetClipboardText([MarshalAs(UnmanagedType.LPUTF8Str)] string text);
 
@@ -796,13 +794,13 @@ namespace ImGuiNET
         public static NativeImFont* ImFontAtlas_AddFontDefault(NativeImFontAtlas* atlas) { return ImFontAtlas_AddFontDefault(atlas, IntPtr.Zero); }
 
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
-        public static extern NativeImFont* ImFontAtlas_AddFontFromFileTTF(NativeImFontAtlas* atlas, [MarshalAs(UnmanagedType.LPUTF8Str)] string filename, float size_pixels, IntPtr font_cfg, char* glyph_ranges);
+        public static extern NativeImFont* ImFontAtlas_AddFontFromFileTTF(NativeImFontAtlas* atlas, [MarshalAs(UnmanagedType.LPUTF8Str)] string filename, float size_pixels, IntPtr font_cfg, ushort* glyph_ranges);
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
-        public static extern NativeImFont* ImFontAtlas_AddFontFromMemoryTTF(NativeImFontAtlas* atlas, void* ttf_data, int ttf_size, float size_pixels, IntPtr font_cfg, char* glyph_ranges);
+        public static extern NativeImFont* ImFontAtlas_AddFontFromMemoryTTF(NativeImFontAtlas* atlas, void* ttf_data, int ttf_size, float size_pixels, IntPtr font_cfg, ushort* glyph_ranges);
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
-        public static extern NativeImFont* ImFontAtlas_AddFontFromMemoryCompressedTTF(NativeImFontAtlas* atlas, void* compressed_ttf_data, int compressed_ttf_size, float size_pixels, ImFontConfig* font_cfg, char* glyph_ranges);
+        public static extern NativeImFont* ImFontAtlas_AddFontFromMemoryCompressedTTF(NativeImFontAtlas* atlas, void* compressed_ttf_data, int compressed_ttf_size, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
-        public static extern NativeImFont* ImFontAtlas_AddFontFromMemoryCompressedBase85TTF(NativeImFontAtlas* atlas, [MarshalAs(UnmanagedType.LPUTF8Str)] string compressed_ttf_data_base85, float size_pixels, ImFontConfig* font_cfg, char* glyph_ranges);
+        public static extern NativeImFont* ImFontAtlas_AddFontFromMemoryCompressedBase85TTF(NativeImFontAtlas* atlas, [MarshalAs(UnmanagedType.LPUTF8Str)] string compressed_ttf_data_base85, float size_pixels, ImFontConfig* font_cfg, ushort* glyph_ranges);
 
         [DllImport(cimguiLib, CallingConvention = CallingConvention.Cdecl)]
         public static extern void ImFontAtlas_ClearTexData(NativeImFontAtlas* atlas);
